@@ -20,7 +20,9 @@ const socials = [
 export const Contact = () => {
   const sheetMonkeyUrl = useMemo(() => {
     const v = (import.meta.env.VITE_SHEETMONKEY_URL as string | undefined) ?? "";
-    return typeof v === "string" ? v.trim() : "";
+    const fallback = "https://api.sheetmonkey.io/form/rGgJDYduPFsH9FMtuo8ESj";
+    const url = typeof v === "string" ? v.trim() : "";
+    return url || fallback;
   }, []);
 
   const [name, setName] = useState("");
