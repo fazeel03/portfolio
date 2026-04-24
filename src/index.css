@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 220 20% 92%;
+
+    --card: 230 22% 11%;
+    --card-foreground: 220 20% 92%;
+
+    --popover: 230 22% 11%;
+    --popover-foreground: 220 20% 92%;
+
+    --primary: 260 80% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 20% 16%;
+    --secondary-foreground: 220 15% 80%;
+
+    --muted: 230 18% 14%;
+    --muted-foreground: 220 12% 55%;
+
+    --accent: 260 50% 18%;
+    --accent-foreground: 260 80% 80%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 18% 16%;
+    --input: 230 18% 16%;
+    --ring: 260 80% 65%;
+
+    --radius: 0.75rem;
+
+    --gradient-start: 260 80% 65%;
+    --gradient-end: 210 90% 60%;
+
+    --sidebar-background: 230 25% 7%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 260 80% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 16%;
+    --sidebar-accent-foreground: 220 20% 92%;
+    --sidebar-border: 230 18% 16%;
+    --sidebar-ring: 260 80% 65%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gradient-end)));
+  }
+
+  .bg-gradient-primary {
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gradient-end)));
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+  }
+}
